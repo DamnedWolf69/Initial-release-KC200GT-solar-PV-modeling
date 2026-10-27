@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "KC200GT PV model fitting and validation"
+message: "Please cite the upstream measured-data publication and manufacturer specifications when reusing this work."
+type: software
+version: 1.0.0
+references:
+  - type: article
+    title: "Hybrid successive discretisation algorithm used to calculate parameters of the photovoltaic cells and panels for existing datasets"
+    authors:
+      - family-names: Cotfas
+        given-names: Daniel T.
+      - family-names: Deaconu
+        given-names: Adrian M.
+      - family-names: Cotfas
+        given-names: Petru A.
+    doi: 10.1049/rpg2.12262
+    year: 2021

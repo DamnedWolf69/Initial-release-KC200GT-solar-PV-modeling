@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kc200gt-pv-validation"
+version = "1.0.0"
+description = "Reproducible KC200GT single- and double-diode benchmark and NOCT cross-check"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2", "pandas>=2.0,<3", "matplotlib>=3.7,<4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
