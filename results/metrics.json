@@ -1,0 +1,121 @@
+{
+  "description": "Reproducible two-model fit: 25 training, 9 interpolation-test observations",
+  "counts": {
+    "published_measured_points": 34,
+    "training_points": 25,
+    "held_out_points": 9,
+    "environment_conditions_per_model": 15
+  },
+  "nominal_references": {
+    "STC_Pmax_W": 200.0,
+    "STC_datasheet_Vmp_times_Imp_W": 200.143,
+    "NOCT_Pmax_rating_W": 142.0,
+    "NOCT_Vmp_times_Imp_W": 142.21599999999998,
+    "measured_sparse_peak_W": 204.73702938
+  },
+  "fitting": {
+    "SDM": {
+      "optimization_coordinates": [
+        8.186269910519103,
+        -9.466146273212734,
+        1.0000000000000002,
+        0.26518203695331993,
+        2.0921698447626427
+      ],
+      "training_SSE_A2": 0.007688676849520154,
+      "n_starts": 3,
+      "optimizer_message": "`ftol` termination condition is satisfied."
+    },
+    "DDM": {
+      "optimization_coordinates": [
+        8.18626990846289,
+        -9.466146273494182,
+        -12.98843785183046,
+        1.0000000000000002,
+        2.9997879548683475,
+        0.265182037688501,
+        2.092169853293067
+      ],
+      "training_SSE_A2": 0.007688676857728916,
+      "n_starts": 4,
+      "optimizer_message": "`ftol` termination condition is satisfied."
+    }
+  },
+  "comparison": [
+    {
+      "Model": "SDM",
+      "Train_RMSE_A": 0.017537020099800484,
+      "Train_MAE_A": 0.013994749462195713,
+      "Test_RMSE_A": 0.010500710268912675,
+      "Test_MAE_A": 0.0076225119793159974,
+      "Test_R2": 0.9999677203911583,
+      "STC_Pmax_W": 203.65366183001626,
+      "STC_Vmp_V": 26.994693438454064,
+      "STC_Imp_A": 7.544210949990293,
+      "STC_Voc_V": 33.11140120788938,
+      "STC_FF_pct": 75.29377200443949,
+      "STC_vs_datasheet_Pmax_pct": 1.7540767501317862,
+      "STC_vs_measured_sparse_peak_pct": -0.529150761474106,
+      "NOCT_Pmax_W": 147.11958514921375,
+      "NOCT_Vmp_V": 24.31701309077989,
+      "NOCT_Imp_A": 6.050068098412796,
+      "NOCT_Voc_V": 30.10274451125478,
+      "NOCT_Pmax_signed_error_pct": 3.605341654375879,
+      "NOCT_Pmax_abs_error_pct": 3.605341654375879,
+      "NOCT_Vmp_signed_error_pct": 4.814711598189191,
+      "NOCT_Imp_signed_error_pct": -1.3039461922871811
+    },
+    {
+      "Model": "DDM",
+      "Train_RMSE_A": 0.01753702010916212,
+      "Train_MAE_A": 0.013994749529931697,
+      "Test_RMSE_A": 0.010500710869477091,
+      "Test_MAE_A": 0.007622512776112355,
+      "Test_R2": 0.999967720387466,
+      "STC_Pmax_W": 203.65366185578912,
+      "STC_Vmp_V": 26.99469343482839,
+      "STC_Imp_A": 7.544210951958299,
+      "STC_Voc_V": 33.11140120929655,
+      "STC_FF_pct": 75.29377202696269,
+      "STC_vs_datasheet_Pmax_pct": 1.7540767630090104,
+      "STC_vs_measured_sparse_peak_pct": -0.5291507488858297,
+      "NOCT_Pmax_W": 147.11958516266748,
+      "NOCT_Vmp_V": 24.317013088340435,
+      "NOCT_Imp_A": 6.050068099572996,
+      "NOCT_Voc_V": 30.10274451265189,
+      "NOCT_Pmax_signed_error_pct": 3.6053416638503357,
+      "NOCT_Pmax_abs_error_pct": 3.6053416638503357,
+      "NOCT_Vmp_signed_error_pct": 4.8147115876742905,
+      "NOCT_Imp_signed_error_pct": -1.3039461733605917
+    }
+  ],
+  "parameters": [
+    {
+      "Model": "SDM",
+      "Iph_A": 8.186269910519103,
+      "I01_A": 3.418642810027186e-10,
+      "I02_A": null,
+      "n1": 1.0000000000000002,
+      "n2": null,
+      "Rs_ohm": 0.26518203695331993,
+      "Rsh_ohm": 123.6430884790048
+    },
+    {
+      "Model": "DDM",
+      "Iph_A": 8.18626990846289,
+      "I01_A": 3.4186428078117095e-10,
+      "I02_A": 1.0269803835340348e-13,
+      "n1": 1.0000000000000002,
+      "n2": 2.9997879548683475,
+      "Rs_ohm": 0.265182037688501,
+      "Rsh_ohm": 123.64309090760584
+    }
+  ],
+  "notes": [
+    "NOCT is an out-of-condition comparison to a manufacturer rating, NOT lab I-V validation.",
+    "The held-out STC set tests interpolation within a single measured curve, NOT unseen weather conditions.",
+    "Extra model parameters are not uniquely identifiable; check bounds and sensitivity.",
+    "Temperature correction is De Soto-inspired and extended to both DDM diodes under assumptions.",
+    "No temperature/irradiance swept I-V measurements are fabricated."
+  ]
+}
